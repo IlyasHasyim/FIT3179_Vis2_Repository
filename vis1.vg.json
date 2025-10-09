@@ -20,7 +20,7 @@
                     "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
                 },
             "key": "State",
-            "fields": ["Current daily smoker"]
+            "fields": ["% of daily smokers", "Current daily smoker"]
             }
         }
       ],
@@ -28,14 +28,15 @@
       "mark": {"type": "geoshape", "stroke": "white"},
       "encoding": {
         "color": {
-            "field": "Current daily smoker",
+            "field": "% of daily smokers",
             "type": "quantitative",
             "scale": {"scheme": "reds"},
             "title": "Number of Daily Smokers"
         },
         "tooltip": [
             {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
-            {"field": "Current daily smoker", "type": "quantitative", "title":"Number of daily smokers"}
+            {"field": "% of daily smokers", "type": "quantitative", "title": "% of daily smokers"},
+            {"field": "Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"}
         ]
       }
     }
