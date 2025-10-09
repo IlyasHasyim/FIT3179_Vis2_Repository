@@ -3,12 +3,14 @@
   "width": 800,
   "height": 450,
   "title": "Test",
-  "projection": {"type": "equalEarth"},
+  "projection": {"type": "mercator",
+                "center": [134, -28],
+                "scale": 650},
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/ne_10m_admin_0_countries.json",
-        "format": {"type": "topojson", "feature": "ne_10m_admin_0_countries"}
+        "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/STE_2016_AUST.json",
+        "format": {"type": "topojson", "feature": "STE_2016_AUST"}
       },
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     }
