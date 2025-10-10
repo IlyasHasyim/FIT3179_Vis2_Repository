@@ -5,7 +5,10 @@
         {
             "width": 800,
             "height": 450,
-            "projection": {"type": "mercator", "center": [134, -28], "scale": 650},
+            "projection": {
+                "type": "mercator",
+                "center": [134, -10],
+                "scale": 650},
             "params": [
                 {
                     "name": "stateSelect",
@@ -23,21 +26,26 @@
                         "data":{
                             "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
                         },
-                        "key": "State"
+                        "key": "State",
+                        "fields": ["% of daily smokers", "Current daily smoker"]
                     }
                 }
             ],
             "mark": {"type": "geoshape", "stroke": "white"},
             "encoding": {
                 "color": {
-                    "field": "Current daily smoker",
+                    "field": "% of daily smokers",
                     "type": "quantitative",
                     "scale": {"scheme":"reds"},
-                    "title": "% of daily smokers"
+                    "title": "% of daily smokers",
+                    "legend": {
+                        "labelExpr": "datum.label + '%'"
+                    }
                 },
                 "tooltip": [
-                    {"field": "properties.STE_NAME16", "title":"State"},
-                    {"field": "Current daily smoker", "title": "Number of daily smokers"}
+                    {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
+                    {"field": "% of daily smokers", "type": "quantitative", "title": "% of daily smokers"},
+                    {"field": "Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"}
                 ]
             }
         }
