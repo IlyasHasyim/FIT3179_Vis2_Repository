@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Smoking Prevalence in Australia",
+    "vconcat": [
+        {
+            "width": 800,
+            "height": 450,
+            "projection": {"type": "mercator", "center": [134, -28], "scale": 650},
+            "params": [
+                {
+                    "name": "stateSelect",
+                    "select": {"type": "point", "fields": ["properties.STE_NAME16"]}
+                }
+            ],
+            "data": {
+                "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/STE_2016_AUST.json",
+                "format": {"type": "topojson", "feature": "STE_2016_AUST"}
+            },
+            "transform": [
+                {
+                    "lookup": "properties.STE_NAME16",
+                    "from": {
+                        "data":{
+                            "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
+                        },
+                        "key": "State"
+                    }
+                }
+            ],
+            "mark": {"type": "geoshape", "stroke": "white"},
+            "encoding": {
+                "color": {
+                    "field": "Current daily smoker",
+                    "type": "quantitative",
+                    "scale": {"scheme":"reds"},
+                    "title": "% of daily smokers"
+                },
+                "tooltip": [
+                    {"field": "properties.STE_NAME16", "title":"State"},
+                    {"field": "Current daily smoker", "title": "Number of daily smokers"}
+                ]
+            }
+        }
+    ]
+}
