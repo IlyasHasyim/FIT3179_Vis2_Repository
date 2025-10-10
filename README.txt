@@ -9,3 +9,6 @@ https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-he
 
 Daily smokers per territory:
 https://www.abs.gov.au/statistics/health/health-conditions-and-risks/national-health-survey/2022#data-downloads
+
+Life Expectancy:
+https://www.abs.gov.au/statistics/people/population/life-expectancy/latest-release#states-and-territories
