@@ -48,6 +48,52 @@
                     {"field": "Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"}
                 ]
             }
+        },
+
+        {
+            "width": 800,
+            "height": 300,
+            "title": "Life Expectancy and Smoking Rates",
+            "data": {
+                "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
+            },
+            "layer": [
+                {
+                    "mark": {"type": "point", 
+                    "filled": true
+                    },
+                    "encoding": {
+                        "x": {"field": "% of daily smokers", "type": "quantitative"},
+                        "y": {"field": "Life Expectancy", "type": "quantitative", "scale": {"domain": [77, 84]}},
+                        "color":{
+                            "field": "State",
+                            "type": "nominal",
+                            "legend": {"orient": "right"}
+                        },
+                        "size": {
+                            "field": "% of daily smokers",
+                            "type": "quantitative",
+                            "scale": 
+                            {
+                                "domain": [5, 15],
+                                "range": [50, 1500]
+                            },
+                            "title": "% of daily smokers"
+                        },
+                        "tooltip": [
+                            {"field": "State", "type": "nominal"},
+                            {"field": "% of daily smokers", "type": "quantitative", "title": "% of daily smokers"},
+                            {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy"}
+                        ]
+                    }
+                },
+                {
+                    "mark": {"type": "rule", "color": "red", "strokeWidth": 1},
+                    "encoding": {
+                        "y": {"datum": 83}
+                    }
+                }
+            ]
         }
     ]
 }
