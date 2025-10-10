@@ -63,12 +63,13 @@
                     "filled": true
                     },
                     "encoding": {
-                        "x": {"field": "% of daily smokers", "type": "quantitative"},
-                        "y": {"field": "Life Expectancy", "type": "quantitative", "scale": {"domain": [77, 84]}},
+                        "x": {"field": "% of daily smokers", "type": "quantitative", "scale": {"domain": [5, 15]}},
+                        "y": {"field": "Life Expectancy", "type": "quantitative", "scale": {"domain": [77, 85]}},
                         "color":{
                             "field": "State",
                             "type": "nominal",
-                            "legend": {"orient": "right"}
+                            "legend": {"orient": "right"},
+                            "scale": {"scheme": "purplered"}
                         },
                         "size": {
                             "field": "% of daily smokers",
