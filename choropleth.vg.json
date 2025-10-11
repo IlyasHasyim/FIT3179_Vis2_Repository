@@ -9,10 +9,10 @@
                 "type": "mercator",
                 "center": [134, -10],
                 "scale": 650},
-            "params": [
+            "params": [ 
                 {
                     "name": "stateSelect",
-                    "select": {"type": "point", "fields": ["properties.STE_NAME16"]}
+                    "select": {"type": "point", "fields": ["State"]}
                 }
             ],
             "data": {
@@ -27,9 +27,10 @@
                             "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
                         },
                         "key": "State",
-                        "fields": ["% of daily smokers", "Current daily smoker"]
+                        "fields": ["% of daily smokers", "Current daily smoker", "Life Expectancy"]
                     }
-                }
+                },
+                {"calculate": "datum.properties.STE_NAME16", "as": "State"}
             ],
             "mark": {"type": "geoshape", "stroke": "white"},
             "encoding": {
@@ -42,10 +43,16 @@
                         "labelExpr": "datum.label + '%'"
                     }
                 },
+                "opacity":{
+                    "condition": {"param": "stateSelect", "value": 1},
+                    "value": 0.5
+                },
+
                 "tooltip": [
                     {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
                     {"field": "% of daily smokers", "type": "quantitative", "title": "% of daily smokers"},
-                    {"field": "Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"}
+                    {"field": "Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"},
+                    {"field": "Life Expectancy", "type": "quantitative", "title": "Life Expectancy"}
                 ]
             }
         },
@@ -53,10 +60,13 @@
         {
             "width": 800,
             "height": 300,
-            "title": "Life Expectancy and Smoking Rates",
+            "title": "Life Expectancy of Each State",
             "data": {
                 "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
             },
+            "transform": [
+                {"filter": {"param": "stateSelect"}}
+            ],
             "layer": [
                 {
                     "mark": {"type": "point", 
