@@ -1,0 +1,37 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.highlight {
+    font-size: large;
+    font-weight: bold;
+    color: #970B13;
+}
+
+.state {
+    font-size: large;
+    font-weight: bold;
+    color: #E4619A;
+}
+
+.desc1 {
+    width: 80%;
+}
+
+.tip {
+    font-style: italic;
+    font-size: medium;
+    color: gray;
+}
+

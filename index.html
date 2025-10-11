@@ -4,16 +4,37 @@
         <meta charset = "UTF-8">
         <meta http-equiv="X-UA-Compatible" content=" IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        
         <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
         <script src="vega-lite-vis.js"></script>
-        <title>Prevalence of Smoking and its Effects</title>
+        
+        <title>Prevalence of Smoking and its Impacts</title>
     </head>
     <body>
         <h1>
-            Prevalence of Smoking and its Effects
+            Prevalence of Smoking and its Impacts
         </h1>
-        <div id="choropleth"></div>
+        <div class="container">
+            <div class="desc1">
+                <h2>
+                    Background Information and Findings
+                </h2>
+                <p>
+                    Smoking causes many health complications such as increased risk of cancer, heart disease, lung complications, and strokes. 
+                    Approximately <span class="highlight"> 1 out of 10 Australians</span> smoke on a daily basis. 
+                    To illustrate the impact smoking has on Australians, the bubble plot reflects that states with higher rates of daily smokers have a life expectancy lower than the national average of 83. 
+                    These states include <span class="state">Tasmania</span>, <span class="state">Queensland</span>, and the <span class="state">Northern Territory</span>. 
+                    This concludes that <span class="highlight">higher levels of smoking reduces life expectancy.</span>  
+                    <br><br>
+                    <span class="tip">Tip: Click on the different states to view the average life expectancy.</span>
+                </p>
+            </div>
+
+            <div id="choropleth"></div>
+        </div>
+        
     </body>
 </html>
