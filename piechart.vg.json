@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text":"Rate of Daily Smokers per State",
+        "fontSize":20,
+        "orient":"top",
+        "offset":-120
+    },
+    "width": 500,
+    "height":800,
+    "data": {
+                "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
+            },
+    "transform": [
+        {"filter": "datum.State != 'Australia'"}
+    ],
+    "layer":[
+        {
+            "mark": {"type": "arc", "stroke":"white", "strokeWidth":2},
+            "encoding": {
+                "theta": {
+                    "field": "% of daily smokers", 
+                    "type": "quantitative",
+                    "sort": "descending"
+                },
+                "color":{
+                    "field":"State", 
+                    "type": "nominal", 
+                    "scale": {"scheme": "purplered"},
+                    "legend": 
+                    {
+                        "orient": "top-left",
+                        "offset":500,
+                        "titleFontSize":20,
+                        "labelFontSize":13
+
+                    }
+                },
+                "tooltip": [
+                    {"field": "State", "type": "nominal"},
+                    {"field": "% of daily smokers", "type": "quantitative"},
+                    {"field":"Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"}
+                ]
+                
+            }
+        },
+        {
+            "mark": {"type": "text"},
+            "encoding": {
+                "theta": {
+                    "field": "% of daily smokers", 
+                    "type": "quantitative",
+                    "sort": "descending"
+                },
+                "text": {"field": "Short Name", "type": "nominal"}
+            }
+        }
+    ]
+    
+
+}
