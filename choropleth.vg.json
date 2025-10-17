@@ -2,7 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "vconcat": [
         {
-            "title": "Smoking Prevalence in Australia",
+            "title": {
+                "text": "Smoking Prevalence in Australia",
+                "fontSize":20
+            },
             "width": 800,
             "height": 450,
             "projection": {
@@ -41,6 +44,9 @@
                     "title": "% of daily smokers",
                     "legend": {
                         "orient": "right",
+                        "titleFontSize":15,
+                        "labelFontSize":13,
+                        "offset": 30,
                         "labelExpr": "datum.label + '%'"
                     }
                 },
@@ -61,12 +67,16 @@
         {
             "width": 800,
             "height": 300,
-            "title": "Life Expectancy of Each State",
+            "title": {
+                "text":"Life Expectancy of Each State",
+                "fontSize": 20
+            },
             "data": {
                 "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
             },
             "transform": [
                 {"filter": {"param": "stateSelect"}}
+                
             ],
             "layer": [
                 {
@@ -79,7 +89,12 @@
                         "color":{
                             "field": "State",
                             "type": "nominal",
-                            "legend": {"orient": "right"},
+                            "legend": {
+                                "orient": "right",
+                                "offset":30,
+                                "labelFontSize":13,
+                                "titleFontSize":15
+                            },
                             "scale": {"scheme": "purplered"}
                         },
                         "size": {
@@ -91,10 +106,12 @@
                                 "range": [50, 1500]
                             },
                             "legend":{
+                                "labelFontSize": 13,
                                 "orient": "right",
-                                "labelExpr": "datum.label + '%'"
+                                "labelExpr": "datum.label + '%'",
+                                "titleFontSize":15
                             },
-                            "title": "% of daily smokers"
+                            "title": "Rates of daily smokers"
                         },
                         "tooltip": [
                             {"field": "State", "type": "nominal"},
@@ -111,5 +128,12 @@
                 }
             ]
         }
-    ]
+    ],
+    
+    "resolve": {
+        "legend": {
+            "color": "independent",
+            "size": "independent"
+        }
+    }
 }
