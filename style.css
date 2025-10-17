@@ -31,6 +31,7 @@ h1 {
 
 .tip {
     font-style: italic;
+    font-weight: bold;
     font-size: medium;
     color: gray;
 }
