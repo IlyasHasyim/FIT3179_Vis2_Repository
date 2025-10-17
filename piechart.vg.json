@@ -3,11 +3,13 @@
     "title": {
         "text":"Rate of Daily Smokers per State",
         "fontSize":20,
-        "orient":"top",
-        "offset":-120
+        "orient":"top"
     },
-    "width": 500,
-    "height":800,
+    "width": 300,
+    "height":350,
+    "view": {
+        "stroke": "transparent"
+        },
     "data": {
                 "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
             },
@@ -29,8 +31,8 @@
                     "scale": {"scheme": "purplered"},
                     "legend": 
                     {
-                        "orient": "top-left",
-                        "offset":500,
+                        "orient": "right",
+                        "offset":100,
                         "titleFontSize":20,
                         "labelFontSize":13
 
@@ -42,17 +44,6 @@
                     {"field":"Current daily smoker", "type": "quantitative", "title": "Number of daily smokers"}
                 ]
                 
-            }
-        },
-        {
-            "mark": {"type": "text"},
-            "encoding": {
-                "theta": {
-                    "field": "% of daily smokers", 
-                    "type": "quantitative",
-                    "sort": "descending"
-                },
-                "text": {"field": "Short Name", "type": "nominal"}
             }
         }
     ]
