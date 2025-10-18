@@ -19,6 +19,20 @@
             "as": ["Diseases", "Number of Cases"]
         }
     ],
+
+    "params": [
+        {
+            "name": "caseFilter",
+            "value":0,
+            
+            "bind":{
+                "input": "range",
+                "min": 0,
+                "max": 400,
+                "name": "Filter by Number of Cases: "
+            }
+        }
+    ],
     "autosize":"fit",
     "layer": [
         {
@@ -52,13 +66,33 @@
                         "titleFontSize":15,
                         "labelFontSize":10,
                         "orient": "right"
-                    }
+                    },
+                    "condition":{
+                        "test":"datum['Number of Cases'] < caseFilter",
+                        "value": "lightgrey"
+                    }          
+                },
+                "opacity":{
+                    "condition":{
+                        "test":"datum['Number of Cases'] >= caseFilter",
+                        "value":1
+                    },
+                    "value":0.5
+                    
                 },
                 "tooltip":[
                     {"field":"State"},
                     {"field":"Diseases"},
                     {"field":"Number of Cases"}
                 ]
+            }
+        },
+        {
+            "mark":{"type": "text","color":"grey", "fontSize": 15, "fontWeight":"lighter"},
+            "encoding": {
+                "x": {"value": 260},
+                "y": {"value": 30},
+                "text": {"value": "Highest Number of Cases"}
             }
         }
     ]

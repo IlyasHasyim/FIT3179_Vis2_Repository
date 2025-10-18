@@ -49,8 +49,14 @@ h2 {
     
 }
 
+input[type="range"] {
+    accent-color: #970B13;
+}
+
 .desc3 {
+    width: 80%;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .container h2 {
