@@ -4,6 +4,11 @@ body {
 
 h1 {
     text-align: center;
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 25px;
 }
 
 .container {
@@ -14,13 +19,13 @@ h1 {
 }
 
 .highlight {
-    font-size: large;
+    font-size: 25px;
     font-weight: bold;
     color: #970B13;
 }
 
 .state {
-    font-size: large;
+    font-size: 25px;
     font-weight: bold;
     color: #E4619A;
 }
@@ -34,6 +39,10 @@ h1 {
     display: flex;
     gap: 20px;
     
+}
+
+.desc3 {
+    width: 80%;
 }
 
 .container h2 {
