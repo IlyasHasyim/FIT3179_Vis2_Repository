@@ -24,6 +24,10 @@ h2 {
     color: #970B13;
 }
 
+#barchart {
+    width: 700px;
+    height: 450px;
+}
 .state {
     font-size: 25px;
     font-weight: bold;

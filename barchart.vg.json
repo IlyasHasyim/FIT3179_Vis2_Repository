@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text":"Diseases caused by Smoking",
+        "fontSize": 20
+    },
+    "width":700,
+    "height":450,
+    "data": 
+    {
+        "url": "https://raw.githubusercontent.com/IlyasHasyim/FIT3179_Vis2_Repository/refs/heads/main/data/Dataset.csv"
+    },
+    "transform": [
+        {"filter": "datum.State != 'Australia'"},
+        {
+            "fold": [
+                "Cancer", "COPD", "Heart, Stroke and Vascular Disease"
+            ],
+            "as": ["Diseases", "Number of Cases"]
+        }
+    ],
+    "layer": [
+        {
+            "mark":"bar",
+            "encoding": {
+                "x": {
+                    "field": "Short Name",
+                    "type": "nominal",
+                    "title": "State",
+                    "axis": {
+                        "labelAngle":0,
+                        "labelFontSize":13,
+                        "titleFontSize":15
+                    }
+                },
+                "xOffset":{"field": "Diseases"},
+                "y": {
+                    "field": "Number of Cases",
+                    "type": "quantitative",
+                    "title": "Number of Cases",
+                    "axis":{
+                        "labelFontSize":13,
+                        "titleFontSize":15
+                    }
+                },
+                "color":{
+                    "field": "Diseases",
+                    "type": "nominal",
+                    "scale":{"scheme":"reds"},
+                    "legend":{
+                        "titleFontSize":15,
+                        "labelFontSize":10
+                    }
+                },
+                "tooltip":[
+                    {"field":"State"},
+                    {"field":"Diseases"},
+                    {"field":"Number of Cases"}
+                ]
+            }
+        }
+    ]
+}

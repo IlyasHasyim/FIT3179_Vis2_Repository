@@ -9,3 +9,9 @@ var vg_1 = "choropleth.vg.json";
   // Access the Vega view instance
  // (https://vega.github.io/vega/docs/api/view/) as result.view
  }).catch(console.error);
+
+var vg_3 = "barchart.vg.json";
+  vegaEmbed("#barchart", vg_3).then(function(result) {
+  // Access the Vega view instance
+ // (https://vega.github.io/vega/docs/api/view/) as result.view
+ }).catch(console.error);
