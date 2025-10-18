@@ -25,9 +25,13 @@ h2 {
 }
 
 #barchart {
-    width: 700px;
+    width: 800px;
     height: 450px;
 }
+
+
+
+
 .state {
     font-size: 25px;
     font-weight: bold;
@@ -46,7 +50,7 @@ h2 {
 }
 
 .desc3 {
-    width: 80%;
+    align-items: center;
 }
 
 .container h2 {

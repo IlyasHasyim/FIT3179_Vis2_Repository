@@ -4,7 +4,7 @@
         "text":"Diseases caused by Smoking",
         "fontSize": 20
     },
-    "width":700,
+    "width":900,
     "height":450,
     "data": 
     {
@@ -19,6 +19,7 @@
             "as": ["Diseases", "Number of Cases"]
         }
     ],
+    "autosize":"fit",
     "layer": [
         {
             "mark":"bar",
@@ -49,7 +50,8 @@
                     "scale":{"scheme":"reds"},
                     "legend":{
                         "titleFontSize":15,
-                        "labelFontSize":10
+                        "labelFontSize":10,
+                        "orient": "right"
                     }
                 },
                 "tooltip":[

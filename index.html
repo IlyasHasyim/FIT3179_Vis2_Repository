@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
         
         <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.12.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
         <script src="vega-lite-vis.js"></script>
         
@@ -54,16 +54,21 @@
 
         <div class="container">
                 <h2>
-                    Why is this bad?
+                    Why is smoking bad?
                 </h2>
-                <div class="desc3">
+                <div class="desc2">
                     <p>
-                        Smoking cause and expedites health complications such as Cancer, Heart diseases, strokes, Chronic obstructive pulmonary disease and more. 
+                        Smoking cause and expedites health complications such as <span class="highlight">Cancer</span>, <span class="highlight">Heart diseases and strokes</span>, 
+                        <span class="highlight">Chronic obstructive pulmonary disease (COPD)</span> and more. 
+                        <span class="state">New South Wales</span> suffers the most with the highest number of cases for <span class="highlight">Heart diseases and strokes</span>.
+                        The disease has the highest number of cases for each of the states as compared to the other diseases.
                     </p>
-                    <div id="barchart"></div>
+                    
                     
                 </div>
+
+                <div id="barchart"></div>
             </div>
-        
+            
     </body>
 </html>
